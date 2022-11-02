@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		make first
+		sh 'cat main.c'
+		sh 'make'
             }
         }
     }
