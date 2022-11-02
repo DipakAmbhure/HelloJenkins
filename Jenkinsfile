@@ -2,12 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-		sh 'cat main.c'
-		sh 'make'
-            }
-        }
-    }
+        stage('Clone repo') {
+		steps {
+			sh 'git clone https://github.com/DipakAmbhure/HelloJenkins.git'
+			sh 'ls'
+		}
+	}
+	stage('run make'){
+		steps {
+			sh 'make'
+		}
+	}
+
+   }
 }
