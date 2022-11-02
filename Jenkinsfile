@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('Clone repo') {
 		steps {
+			echo "cloning..."
 			sh 'rm -rf HelloJenkins'
 			sh 'git clone https://github.com/DipakAmbhure/HelloJenkins.git'
-			sh 'ls'
 		}
 	}
 	stage('run make'){
